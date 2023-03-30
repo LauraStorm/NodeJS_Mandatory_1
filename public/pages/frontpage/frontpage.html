@@ -1,0 +1,258 @@
+
+<h1>Node.js</h1> 
+<div class="intro-text">
+    <ul>
+        <li>Node JS is a sever site enviroment <br>
+             - a way to run JavaScript on your computer instead of running JavaScript in the browser </li>
+        <li>We use it to built a webserver</li>
+        <li>Use Node for a webserver that can recieve incoming request ('listen for requests') and then send a response to the request</li>
+        <li>With Node we can write front-end and backend in the same language (JavaScript)</li>
+        <li>When we use Node we can import modules/libraries (reuse-code) from existing packages from npm</li>
+        <br>
+        <li>We can console.log the application</li>
+        <li>Rest API (server)</li>
+    </ul> 
+</div>
+<hr>
+<!-- Express / package.json-->
+<div class="row">
+
+    <div class="col-6">
+        <h3><code>package.json - Express</code></h3>
+        <p>When we create/initialize a new project, we need to have package.json file</p>
+        <ul>
+            <li>package.json descripes the dependencies in our project</li>
+            <li>package.json is a meta data file that descripes the project</li>
+        </ul> <br>
+
+        <h6> 3 things in package.json</h6>
+        <hr>
+        <div class="card-body ">
+            <ol>
+                <li>Scripts (Built-in)</li>
+                <li>Define dependencies</li>
+                <li>Meta information</li>
+            </ol>
+        </div>
+    
+ 
+    </div>
+
+    <div class="col-6">
+        <div class="card m-3 p-3 " >
+            <h6> Create package.json in terminal</h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted">1. Create package.json with express dependency  </p> 
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ npm install express</code></p>
+             
+            </div>
+        </div>
+        <div class="card m-3 p-3 " >
+            <h6>Create a package.json file by 'Hand'</h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted">1. Create a package.json file </p> 
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> package.json</code></p>
+                <p class="card-subtitle mb-2 text-muted">2. In package.json write express dependency </p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>{
+    "dependencies": {
+        "meaning-of-life": "1.0.0",
+        "express": "4.18.2"
+    }
+}       </pre></code>
+                </p>
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments">3. To install dependencies write in the terminal </code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ npm install</code></p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--Node commands-->
+<hr>
+<div class="container">
+    <h2>Commands</h2>
+    <hr>
+    <!-- node -v -->
+    <div class="row">
+        <div class="col">
+            <h3 ><code>$ node -v</code></h3>
+            <ul>
+                <li>This command will tell you what version of Node you have installed</li> 
+                <li>It is also a way to check if you have Node installed on your computer</li>
+            </ul>
+        </div>
+        
+        <div class="col card m-3 p-3 " >
+            <h6>Terminal command</h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ node -v</code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> // shows: v18.14.0  </code></p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- node in terminal -->
+    <div class="row">
+        <div class="col">
+            <h3 ><code>$ node </code></h3>
+            <ul>
+                <li>This command allows you to open Node in the terminal</li> 
+                <li>You can execute JavaScript commands from the command line in the terminal</li>
+                <li>It will also tell you which version you have</li> <br>
+                <b>OBS:</b> to exit press <code>control</code> + <code>c</code> 
+            </ul>
+        </div>
+        <div class="col card m-3 p-3 " >
+            <h6>Terminal command </h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ node </code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// shows: Welcome to Node.js v18.14.0. </code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> > </code></p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- run javascript files -->
+    <div class="row">
+        <div class="col">
+            <h3 ><code>$ node filename.js</code></h3>
+            <ul>
+                <li>This command will run a JavaScript file</li> 
+                <li>You write <code>node</code> and the path to the file you would like to run/execute</li>
+                <li>You can also stand in the right folder (using cd +ls) and write <code>node filename.js</code></li> <br>
+                <b>OBS:</b> use 'tab' on your keyboard to finish your writing - to check that you are in the right folder
+            </ul>
+        </div>
+        
+        <div class="col card m-3 p-3 " >
+            <h6>Terminal command</h6>
+            
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> // run a script with path</code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ node node/notes/myfile.js</code></p> <br>
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> // run a script from the right folder  </code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ node myfile.js  </code></p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- create a new project and package.json -->
+    <div class="row">
+        <div class="col">
+            <h3 ><code>$ npm init </code> <code class="code-comments">||</code> <code> $ npm init -y</code></h3>
+            <ul>
+                <li><code>npm</code> = Node Package Manager</li> 
+                <li><code>init</code> = initialize</li> <br>
+                <li>Use this command <code>npm init</code> to create a new Node JS project. <br> It will initialize a new <code>package.json</code> file</li><br>
+                <li><code>$ npm init -y</code> = creates a package.json without you have to answer questions to the project</li>
+                <li><code>$ npm init </code> = will ask you some questions and then create a package.json for you</li> <br>
+                <b>OBS</b> After we have created package.json we need to remember to install <code>Express</code>
+
+            </ul>
+        </div>
+        <div class="col card m-3 p-3 " >
+            <h6>Terminal command</h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> // initialize project with questions</code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ npm init </code></p> <br>
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> // initialize project without questions</code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ npm init -y </code></p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- install express -->
+    <div class="row">
+        <div class="col">
+            <h3><code>$ npm install express </code> </h3>
+            <ul>
+                <li>We install the <code>Express</code> module from npm, so we can use express in our project</li>
+                <li>If you haven't ran <code>$ npm init </code> and you run <code>$ npm install express</code>, it will create a package.json for you, with express dependency</li>
+
+            </ul>
+        </div>
+        <div class="col card m-3 p-3 " >
+            <h6>Terminal command</h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ npm install Express </code></p> 
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- npm install -->
+    <div class="row">
+        <div class="col">
+            <h3><code>$ npm install  </code> </h3>
+            <ul>
+                <li>We use <code> npm install</code> to run our dependencies from package.json</li>
+                <li>If you write dependencies in package.json remember to run this command after to 'update' the file</li>
+
+            </ul>
+        </div>
+        <div class="col card m-3 p-3 " >
+            <h6>Terminal command</h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ npm install</code></p> 
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- install nodemon  -->
+    <div class="row">
+        <div class="col">
+            <h3 ><code>$ sudo npm install -g nodemon </code></h3>
+            <ul>
+                <li>Nodemon is a great developer tool to install</li> 
+                <li>You don't have to write <code>$ node app.js</code> everytime you make a change in your code</li> 
+                <li>It makes it easier for developers</li> 
+                <li>When nodemon is installed globaly (-g) you write nodemon instead of node when you will run your application</li>
+            </ul>
+        </div>
+        <div class="col card m-3 p-3 " >
+            <h6>Terminal command</h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ sudo npm install -g nodemon</code></p> 
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- run script with nodemon  -->
+    <div class="row">
+        <div class="col">
+            <h3><code>$ nodemon app.js </code></h3>
+            <ul>
+                <li>Use this command when you want to run the application (app.js)</li> 
+                <li>It will automatically update everytime you make a change in the code </li>
+            </ul>
+        </div>
+        <div class="col card m-3 p-3 " >
+            <h6>Terminal command</h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ nodemon app.js</code></p> 
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
