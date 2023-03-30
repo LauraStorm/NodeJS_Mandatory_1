@@ -1,0 +1,214 @@
+<h1>Loop Methods</h1>
+<div class="intro-text">
+    <p>
+        There are different ways to loop over a sequence of data, find specific elements, make changes etc.  <br>
+    </p>
+    <p>In modern JS <b>always use loop methods </b> </p>
+</div>
+
+<!-- Overview of methods-->
+<hr>
+<div class="row">
+    <h3>Loop-methods:</h3>    
+    <p>See examples further down - how to use</p> 
+    
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"></h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>.forEach()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"> </h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>.filter()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"></h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>.map()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"></h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>.find()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"></h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>.findIndex()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title text-muted">see more methods </h5>
+          <h5 class="card-subtitle mb-2 text-muted"><a href="https://www.w3schools.com/jsref/jsref_obj_array.asp">here</a></h5>
+        </div>
+    </div>
+</div>
+
+<!-- ForEach ()-->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>forEach()</code></h3>
+        <ul>
+            <li>Use <code>forEach ()</code> when you want to iterate over 'each' element in an array</li>
+            <li>Is mostly used for the dom</li>
+        </ul>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>Example </h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const friends =["Laura", "Karen", "Yvonne", "Søren"]; </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> friends.forEach(friend => console.log(friend)); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output: Laura Karen Yvonne Søren </code></p>
+        </div>
+    </div>
+</div>
+
+<!-- filter ()-->
+<hr>
+<div class="row">
+    
+    <div class="col">
+        <h3><code>filter()</code></h3>
+        <ul>
+            <li><code>filter()</code> creates a new array (it do not override the old/original)</li>
+            <li>Use <code>filter()</code>  when you want to work with some of the elements from the array.</li>
+            <li>You filter your array with a condition where ever element will be checked - if they passed the condition <br>
+            filter returns a boolean (thats how it checks) </li>
+            <li>It is not a 'one 2 one' because we do not take every element from the original array to the new</li>
+        </ul>
+    </div>
+
+    <div class="col card m-3 p-3 " >
+        <h6>Example </h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                const friends = [ <br>
+                &nbsp { name: "Laura", age: 26 }, <br>
+                &nbsp { name: "Karen", age: 55 }, <br>
+                &nbsp { name: "Yvonne", age: 10 } <br>
+            ];</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">  const friendsOver18 = friends.filter(friend => friend.age > 18); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output:[ { name: 'Laura', age: 26 }, { name: 'Karen', age: 55 } ]</code></p>
+        </div>
+    </div>
+
+    
+   
+</div>
+
+<!-- map ()-->
+<hr>
+<div class="row">
+    
+    <div class="col">
+        <h3><code>map()</code></h3>
+        <ul>
+            <li><code>map()</code> creates a new array with the same length as the original/old array</li>
+            <li>It is a 'one 2 one'</li>
+            <li>Use <code>filter()</code> when you want need to transform the data from one format to another <br>
+            Example: from object to strings or adding a property(key-value) to all objects in an array etc.</li>
+        </ul>
+    </div>
+
+    <div class="col card m-3 p-3 " >
+        <h6>Example: from objects to array with strings  </h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                const friends = [ <br>
+                &nbsp { name: "Laura", age: 26 }, <br>
+                &nbsp { name: "Karen", age: 55 }, <br>
+                &nbsp { name: "Yvonne", age: 10 } <br>
+            ];</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">  const friendsNames = friends.map(friend => friend.name); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output:[ 'Laura', 'Karen', 'Yvonne' ]</code></p>
+        </div> <br>
+        <h6>Example: modify a property</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const friendsOver18 = friends.map(friend => ({... friend, age: friend.age+1})); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output:[{ name: 'Laura', age: 27 }, { name: 'Karen', age: 56 },{ name: 'Yvonne', age: 11 }]</code></p>
+            <p><b>Explain:</b> The arrow function takes a friend as parameter. <br>
+                We use the spread operater (<code>({...})</code>) syntax to create a copy of the original friend object. <br>
+                Last we change the age property and increment every friend-objects age.
+            </p>
+        </div>
+    </div> 
+</div>
+
+<!-- find ()-->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3><code>find()</code></h3>
+        <ul>
+            <li>Use <code>find()</code> to find a element in an array</li>
+            <li>It will return the first found element in the array </li>
+            <li>If the element is not found it will return <code>undefined</code> </li>
+        </ul>
+    </div>
+
+    <div class="col card m-3 p-3 " >
+        <h6>Example </h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                const friends = [ <br>
+                &nbsp { name: "Laura", age: 26 }, <br>
+                &nbsp { name: "Karen", age: 55 }, <br>
+                &nbsp { name: "Yvonne", age: 10 } <br>
+            ];</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">  const firstFriend = friends.find(friend => friend.age > 10); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output:{ name: 'Laura', age: 26 } </code></p>
+        </div>
+    </div> 
+</div>
+
+<!-- findIndex()-->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3><code>findIndex()</code></h3>
+        <ul>
+            <li>Use <code>findIndex()</code> when you would like to find the index position of an element in an array</li>
+            <li>It will return the first found element in the array taht pass the test/condition</li>
+            <li>If the element is not found it will return <code>-1</code> </li>
+        </ul>
+    </div>
+
+    <div class="col card m-3 p-3 " >
+        <h6>Example </h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                const friends = [ <br>
+                &nbsp { name: "Laura", age: 26 }, <br>
+                &nbsp { name: "Karen", age: 55 }, <br>
+                &nbsp { name: "Yvonne", age: 10 } <br>
+            ];</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">  const firstFriend = friends.findIndex(friend => friend.age > 10); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output: 0 </code></p>
+        </div>
+    </div> 
+</div>
+
+<hr>
+<h6><b>NOTE</b></h6>
+<p>For-loops are only used when finger counting is needed </p>
+<p><b>Why you shouldn't use for-loops:</b></p>
+<ul>
+    <li>Loop methods are shorter (brevity)</li>
+    <li>clarity</li>
+    <li>No accidental errors</li>
+</ul>
+
