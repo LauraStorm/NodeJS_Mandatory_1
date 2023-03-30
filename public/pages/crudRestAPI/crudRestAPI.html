@@ -1,0 +1,141 @@
+<h1>CRUD - REST API</h1>
+<div class="intro-tex">
+    <p>How to do a simple CRUD</p>
+    <ul>
+        <li>notice that the example is with commonJS (require()) <br>
+        - but you can also do it with ES6 (import/export) </li>
+    </ul>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-4 ">
+        <h3 class="mt-4 mb-4"><code>Notes</code></h3>
+
+        <p><b>const express = require("express"):</b><br>
+            <code>const express = require("express");</code><br>
+            <code>require()</code> = Means that we would import. <br> 
+            <code>"express"</code> = importing the Express framework into our Node application. <br>
+            'express' is from the package 'node_modules' <br> (we get it when we install express/ create a package.json)
+        </p>
+        <br>
+        <p><b>const app = express():</b><br>
+            <code>const app = express();</code><br>
+            Here we are initializing the express framework and saving it to the app variable
+        </p>
+        <br>
+        <p><b>app.use(express.json()):</b><br>
+            <code>app.use(express.json())</code><br>
+            Tells that we would like to use the the body-parser from express libary. <br>
+            Example: we will use it for incoming json data - ex. post requests 
+        </p>
+        <br>
+        <p><b>Router:</b><code><pre>app.get("/birds", (req, res) => {
+    res.send({data: birdsList});          
+});</pre>
+    </code>
+            It is a request handler <br>
+            <code>"/birds"</code> = endpointed <br>
+            <code>(req, res) </code> = callback function
+        </p>
+
+
+
+        <br>
+        <p><b>req.body:</b> <br> 
+            <code>req</code> = htttp 'request'  <br>
+            <code>body</code> =  the body from the http request - data - <br>
+            The data in this case is a bird. 
+        </p>
+        <br>
+        <p><b>res.send():</b> <br> 
+            <code>res</code> = htttp 'response' <br>
+            <code>send({data : newBird})</code> = sends a response back to the client. <br>
+            In the <code>()</code> we sends the data to the client in json format  <code>{}</code>
+        </p>
+        <br>
+        <p><b>Destructuring:</b> <code>{}</code> <br>
+            Destructuring is an alternative way to assign properties. 
+        </p>
+        <br>
+        <p><b>Object spread sytax:</b> <code>...</code> <br>
+            Spread syntax is used to create a new 'bird' and contain all the properties from <code>req.body</code>
+        </p> 
+        <br>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>CRUD in app.js file</h6>
+        <hr>
+        <div class="card-body "><pre><code class="language-javascript">const express = require("express");
+const app = express();
+
+app.use(express.json()); 
+
+<p class="code-comments">// List with Birds </p>let birdsList = [
+    { id: 1, name: 'blackbird', species: 'sparrow', color: 'black' }, 
+    { id: 2, name: 'eagle', species: 'bird', color: 'brown' },  
+    { id: 3, name: 'seagull', species: 'bird', color: 'white' },
+    { id: 4, name: 'robin', species: 'sparrow', color: 'black'}
+];
+
+<p class="code-comments">// ID </p>let currentId = 4;
+
+
+<p class="code-comments">// (C)reate</p>app.post("/birds", (req, res) => {
+    const {...bird} = req.body;
+    const newBird = {id:idCounter ++, ...bird};
+    birdsList.push(newBird);
+    res.send({data : newBird});  
+});
+
+<p class="code-comments">// (R)ead All</p>app.get("/birds", (req, res) => {
+    res.send({data: birdsList});
+});
+
+<p class="code-comments">// (R)ead by id</p>app.get("/birds/:id", (req, res) => {
+    const { id } = req.params;
+    const bird = birdsList.find(bird => bird.id === Number(id));
+    if (bird) {
+        res.send({data : bird});   
+    } else {
+        res.send({data : `Bird not found with id: ${id}`});   
+    };
+});
+
+<p class="code-comments">// (U)pdate by id</p>app.patch("/birds/:id", (req, res) => {
+    let foundBirdIndex = birdsList.findIndex(bird => bird.id === Number(req.params.id)); 
+     if(foundBirdIndex === -1) {
+         res.status(404).send({message : `Bird not found with id: ${req.params.id}` })
+     } else {
+         const foundBird = birdsList[foundBirdIndex];   
+         birdToUpdate = {...foundBird, ... req.body, id: foundBird.id}; 
+         birdsList[foundBirdIndex] =  birdToUpdate;
+         res.send({data : birdToUpdate});
+     };
+ });
+
+<p class="code-comments">// (D)elete by id</p>app.delete("/birds/:id", (req, res) => {
+    const {id} = req.params;
+    const birdIndex = birdsList.findIndex(bird => bird.id === Number(id));
+    if(birdIndex === -1){
+        res.status(404).send({data : birdIndex, message : `No bird found with id: ${id}`})
+    } else {
+        const deletedBird = birdsList.splice(birdIndex, 1)[0]; 
+        res.send({data : deletedBird});
+    }; 
+});
+
+<p class="code-comments">// PORT</p>const PORT = 8080;
+app.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+        return;
+    }
+    console.log("Server is running on port", PORT);
+});
+
+</code></pre>
+        </div>    
+    </div>
+</div>
