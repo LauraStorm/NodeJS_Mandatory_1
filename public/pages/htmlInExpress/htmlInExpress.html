@@ -1,0 +1,381 @@
+<h1>HTML - in Express</h1>
+<div class="intro-text"></div>
+
+
+<!-- Overview of this page-->
+<div class="row">
+    <h3>Overwiev of this page</h3>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+        <h5 class="card-title">How to structure your HTML </h5>
+        
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+        <h5 class="card-title">Folder Structure</h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+        <h5 class="card-title">Show HTML page with CommonJS</h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+        <h5 class="card-title">Show HTML page with ECMASript</h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+        <h5 class="card-title">Construct a HTML with components</h5>
+        </div>
+    </div>
+    
+</div>
+
+
+<!-- HTML STRUCTURE -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>How to structure your HTML file</code></h3>
+        <br>
+        <ul>
+            <li>When you create a new HTML file, you can write:  '<code>!</code> + '<code>enter</code>' <br>
+            Then you will get:</li>
+            <p class="card mt-2 p-2" style="width: 40%;" ><code class="language-javascript">&lt;!DOCTYPE html&gt; ... </code></p>
+
+            <li>In the <code>body tag </code> you should have a <code>header tag</code> <br>
+            Here can you place a navigation bar
+            </li>
+            <p class="card mt-2 p-2" style="width: 40%;" ><code class="language-javascript"> &lt;header&gt;&lt;/header&gt;</code></p>
+
+            <li><code>main tag </code>: Place your main content in here<br></li>
+            <p class="card mt-2 p-2" style="width: 40%;" ><code class="language-javascript"> &lt;main&gt;&lt;/main&gt;</code></p>
+
+            <li><code>footer tag</code>: can contain copyright notice, logo, contact info and so on ... <br></li>
+            <p class="card mt-2 p-2" style="width: 40%;" ><code class="language-javascript">&lt;footer&gt;&lt;/footer&gt;</code></p>
+
+            <li><code>script tag</code>: place it at the bottom of the <code>body tag</code> - because of the way the HTML file will be runned  ... <br></li>
+            <p class="card mt-2 p-2" style="width: 40%;" ><code class="language-javascript">&lt;script&gt;&lt;/script&gt;</code></p>
+
+            <li><code>link tag</code>: place it in the <code>head tag</code><br></li>
+            <p class="card mt-2 p-2" style="width: 40%;" ><code class="language-javascript">&lt;link&gt;</code></p>
+
+          
+            <div class=" card mt-2 p-3 " style="width: 80%" >
+                <h6>Example - Structuring HTML page </h6>
+                <hr>
+                <div class="card-body">
+                    <p><code class="language-javascript"><pre>&lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;!-- place CSS links here  --&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/main.css&quot;&gt;
+        &lt;title&gt;Frontpage&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    
+        &lt;header&gt;
+            <code class="code-comments"> &lt;!-- Here you can place a navigation bar for example --&gt;</code>
+        &lt;/header&gt;
+    
+        &lt;Main&gt;
+            <code class="code-comments"> &lt;!-- Here you place the main content for the page --&gt;</code>
+        &lt;/Main&gt;
+    
+        &lt;footer&gt;
+            <code class="code-comments">&lt;!-- it can contain copyright notice, contact info ... --&gt;</code> 
+        &lt;/footer&gt;
+        
+        <code class="code-comments">&lt;!-- Place the script at the bottom --&gt;</code>
+        &lt;script src=&quot;/pages/frontpage/frontpage.js&quot; &gt;&lt;/script&gt;
+    
+    &lt;/body&gt;
+    &lt;/html&gt;</pre></code></p> 
+                </div>
+            </div>
+        </ul> 
+       
+     </div>
+</div>
+
+
+<!-- Folders STRUCTURE -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>How to structure your folders</code></h3>
+        <br>
+        <ul>
+            
+            <li>When you have a project you should use folders</li> <br>
+            
+            <li>You should have a <code>'public'</code> folder for static files such as HTML-, CSS-, JavaScript files. <br>
+                The public folder is 'available' for the client. Meaning that the files can be seen in the browser. <br>
+                <b>Note:</b> be aware of what data you write in that folder.
+            </li> <br>
+
+            <li>In the <code>'public'</code>  folder you can have folders like:<br>
+                <ul>
+                    <li><code>assets</code></li>
+                    <li> <code>pages</code></li>
+                    <li><p><code>components</code></p></li>
+                </ul> <br>
+                
+                <h6><code>Assets</code> </h6>
+                <p>= can contain, images, CSS, JavaScript files and many more. Often it can be the main styling for all HTML pages example</p>
+
+                <h6><code>Pages</code> </h6>
+                <p>= is for the  sites / web pages you will show in your applicatioin <br>
+                Here you create folder for each page you create. Ex. frontpage-, contact-, visitors folders with html and maybe css- anf Javascript files</p>
+
+                <h6><code>Components</code> </h6>
+                <p>= components that you will reuse on the other pages example. <br>
+                It could be a navigation bar, footer and other 'parts/components' that could be reused</p>
+            </li>
+            
+        </ul> 
+       
+     </div>
+     <div class="col card m-3 p-3 "  >
+        <h6>Folder Structure </h6>
+        <hr>
+        <div class="card-body ">
+            <p><code class="language-javascript"><pre>public:
+- assets
+- pages
+- components
+
+util:
+
+app.js
+package.json</pre></code></p><br>
+        </div>
+</div>
+
+
+<!-- Show HTML file - COMMON JS -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Show HTML page with CommonJS</code></h3>
+        <br>
+        <h5 class="code-comments">Notes to the example</h5><br>
+        
+        <p class="code-comments"><code>app.use(express.static("public"));</code> <br>
+        // tells the application to serve static files from our <code>public</code> folder</p> <br>
+
+        <p class="code-comments"><code>app.get("/", ...</code> <br>
+            // <code>"/"</code> = our endpoint where our frontpage will be shown <br>
+            // <code>res.</code> = HTTP response  <br>
+            // <code>.sendFile()</code> = The HTML file we will send with the response <br>
+            // <code>_dirname </code> =  is the absolute path to where you 'stand' in your project (use it instead of write the whole path yourself.<br>
+            After <code>_dirname </code> you specify the path to the frontpage.html file <br>
+        </p> <br>
+        <hr>
+        <br>
+        <p> <b>NOTE:</b> <br>
+            If you go to localhost:8080 you willl see the page - frontpage - when the application is running <br>
+            <code>$ nodemon app.js</code>
+        </p>
+
+     </div>
+     <div class="col card m-3 p-3 "  >
+        <h6>Example - app.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p><code class="language-javascript">const express = require("express");</code></p>
+            <p><code class="language-javascript">const app = express();</code></p>
+            <p><code class="language-javascript">app.use(express.static("public"));</code></p> 
+            <br>
+            <p><code class="code-comments">// frontpage route</code></p>
+            <p><code class="language-javascript"><pre>
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/pages/frontpage/frontpage.html");
+});  
+
+<code class="code-comments">// PORT</code>
+const PORT = 8080;
+app.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+        return;
+    }
+    console.log("Server is running on port: ", PORT);
+});
+
+</pre></code></p> 
+        </div>
+     </div>
+
+
+</div>
+
+<!-- Show HTML file - ES6 -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Show HTML page with ECMASript</code></h3>
+        <br>
+        <h5 class="code-comments">Notes to the example </h5><br>
+        
+        <p class="code-comments"><code>app.use(express.static("public"));</code> <br>
+        // tells the application to serve static files from our <code>public</code> folder</p> <br>
+
+        <p class="code-comments"><code>import path from "path";</code> <br>
+            // we import the 'path' library, so we can use the <code>'path.resolve'</code> to write the absolute path to the frontpage.html file</p> <br>
+
+        <p class="code-comments"><code>app.get("/", ...</code> <br>
+            // <code>"/"</code> = our endpoint where our frontpage will be shown <br>
+            // <code>res.</code> = HTTP response  <br>
+            // <code>.sendFile()</code> = The HTML file we will send with the response <br>
+            // <code>path.resolve</code> = to write the absolute path 
+        </p> <br>
+        <hr>
+        <br>
+        <p> <b>NOTE:</b> <br>
+        If you go to localhost:8080 you willl see the page - frontpage - when the application is running <br>
+        <code>$ nodemon app.js</code>
+       
+    </div>
+    <div class="col card m-3 p-3 "  >
+        <h6>Example - app.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p><code class="language-javascript">import express from "express";</code></p>
+            <p><code class="language-javascript">const app = express();</code></p>
+            <p><code class="language-javascript">import path from "path";</code></p>
+            <p><code class="language-javascript">app.use(express.static("public"));</code></p> 
+            <br>
+            <p><code class="language-javascript"><pre><code class="code-comments">// frontpage route</code>
+app.get("/", (req, res) => {
+    res.send(path.resolve("public/pages/frontpage/frontpage.html"));
+});  
+
+<code class="code-comments">// PORT</code>
+const PORT = 8080;
+app.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+        return;
+    }
+    console.log("Server is running on port: ", PORT);
+});
+
+</pre></code></p> 
+        </div>
+     </div>
+
+</div> 
+
+<!-- Create HTML with components - ES6 -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Construct a HTML with components</code></h3>
+        <br>
+        <h5 class="code-comments">Notes to the example </h5><br>
+        <div class="col">
+            <ul>
+                <li>Create a <code>templateEngine.js</code> file. <br>
+                In this file we will make functions to construct a HTML page with components - import <code>fs</code> (file system)</li><br>
+
+
+                <li>Create a to functions <code>readPage()</code> and <code>renderPage()</code> in <code>templateEngine.js</code> file  <br>
+                    <ul>
+                        <li><code>readPage()</code> <br>
+                            // reads the path to the HTML page</li>
+                        <li><code>renderPage()</code><br>
+                            // will construct the HTML page with the components (navbar + footer)</li> <br>
+
+                            <p class="code-comments"><code>.readFileSync</code> <br>
+                                // read the file and return the content in bits <br>
+                            </p>
+                            <p class="code-comments"><code>.toString</code> <br>
+                                // converts the bitstream to String so we can construct a whole page <br>
+                            </p>
+                    </ul>
+                </li><br>
+
+                <li>Export the module</li><br>
+                <li>In <code>app.js</code> import the module <code>templateEngine.js</code></li><br>
+                <li>Create the page </li><br>
+                <li>Create the route </li><br>
+            </ul>
+
+        </div>
+        
+
+        <br>
+        <hr>
+        <p> <b>NOTE:</b> <br>
+            If you go to localhost:8080 you willl see the page - frontpage - when the application is running <br>
+            <code>$ nodemon app.js</code>
+        </p>
+
+    </div>
+    <div class="col card m-3 p-3 "  >
+        <h6>Example - tempalteEngine.js + app.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p><code class="code-comments">// tempalteEngine.js</code></p>
+            <p><code class="language-javascript">import fs from "fs";</code></p>
+            <p><code class="language-javascript"><pre>function readPage (pagePath) {
+    return fs.readFileSync(pagePath).toString();
+}
+
+function renderPage (page) {
+    const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString()
+    const footer = fs.readFileSync("./public/components/footer/footer.html").toString()
+
+    return navbar + page + footer;
+}
+
+export default {
+    renderPage,
+    readPage
+}</pre></code></p> 
+            
+            <hr>
+            <p><code class="code-comments">// app.js</code></p>
+            <p><code class="language-javascript">import express from "express";</code></p>
+            <p><code class="language-javascript">import templateEngine from "./util/templateEngine.js";</code></p>
+            <p><code class="language-javascript">const app = express();</code></p>
+            <p><code class="language-javascript">app.use(express.static("public"));</code></p> 
+            <br>
+            <code class="code-comments">// Pages </code>
+            <p><code class="language-javascript">const frontpage = templateEngine.readPage("./public/pages/frontpage/frontpage.html");</code></p> 
+            <p><code class="language-javascript"> const frontpagePage = templateEngine.renderPage(frontpage);</code></p> 
+            <br>
+            <p><code class="language-javascript"><pre><code class="code-comments">// fronpage route</code>
+app.get("/", (req, res) => {
+    res.send(frontpagePage);
+});  
+
+<code class="code-comments">// PORT</code>
+const PORT = 8080;
+app.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+        return;
+    }
+    console.log("Server is running on port: ", PORT);
+});
+
+</pre></code></p> 
+        </div>
+     </div>
+
+</div> 
+
+
+
+
+
+
+
