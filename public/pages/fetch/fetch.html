@@ -1,0 +1,100 @@
+<h1>Fetch</h1>
+<div class="intro-text">
+    <p>
+        How do we fetch data? <br>
+        Here are 2 ways to fetch data!
+    </p>
+</div>
+
+<hr>
+<!-- 'Basic way '-->
+<div>
+    <h3>'A Basic Fetch'</h3>
+    <!-- ex GET -->
+    <h6>Example: GET request</h6>
+    <div class="col card mt-3" >
+        <div class="card-body ">
+        <p class="card-subtitle mb-2 text-muted">
+            <code class="language-javascript">
+            const URL = "https://www.boredapi.com/api/activity"; <br>
+            fetch(URL) <br>
+            .then(response => response.json()) <br>
+            .then(result => console.log(result));
+            </code>
+        </p>
+        <hr>
+        <p>
+            <b>Notes:</b> <br>
+            <code>fetch()</code> = sends a request. Takes one argument, the path/url. <br> + it will return a promise that resolves with a response <br>
+            <code>.then(response => response.json())</code> = takes that data from server and parses it to json <br> + will return a new promise that resolves with the result <br>
+            <code>.then(result => console.log(result))</code> = here we get the data we requestet
+        </p>
+        </div>
+    </div> 
+</div>
+
+
+<hr>
+<!-- 'Async / Await '-->
+<div>
+    <h3>'Async/Await'</h3>
+    <!-- ex GET -->
+    <h6>Example: GET request</h6>
+    <div class="col card mt-3" >
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted">
+                <code class="language-javascript">
+                async function getData () { <br>
+                    &nbsp const URL = "https://www.boredapi.com/api/activity"; <br>
+                    &nbsp const response = await fetch(url); <br>
+                    &nbsp const result = await response.json() <br>
+                    &nbsp return result; <br>
+                }
+                </code>
+            </p>
+            <hr>
+            <p>
+                <b>Notes:</b> <br>
+                <code>async</code> = means that it will return a promise <br>
+                <code>await</code> = it will wait until promise resolves and ready to return data  <br>
+                <code>response.json()</code> = will convert the promise to json format
+            </p>
+        </div>
+    </div> <br>
+
+    <!-- ex POST -->
+    <h6>Example: POST request</h6>
+    <div class="col card mt-3" >
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted">
+                <code class="language-javascript">
+                    async function create (object) { <br>
+                        &nbsp const objectToJson = JSON.stringify(object); <br>
+                        &nbsp const URL = "a-url-to-a-database-example"; <br> <br>
+                        
+                        &nbsp const response = await fetch(URL, { <br>
+                            &nbsp method: 'POST', <br>
+                            &nbsp headers:{ <br>
+                                &nbsp "Content-type": "application/json;" <br>
+                            &nbsp }, <br>
+                            &nbsp body: objectToJson <br>
+                        &nbsp }); <br>
+                    
+                        &nbsp return response; <br>
+                    }
+                </code>
+            </p>
+            <hr>
+            <p>
+                <b>Notes:</b> <br>
+                <code>object</code> = the object you want to send to a database example  <br>
+                <code>JSON.stringify</code> = iwe need to stringify the object to the right format<br>
+                <code>method: post</code> = tells that it is a POST request (it is here you POST, DELETE, PATCH ...)
+                <code>body</code> = the data you send
+                <br><br>
+                ... you can also use the 'basic fetch' 
+            </p>
+        </div>
+    </div>  
+</div> <br>
+
