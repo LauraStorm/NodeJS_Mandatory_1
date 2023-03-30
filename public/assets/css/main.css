@@ -1,0 +1,41 @@
+body {
+    background-color:#fff8fa;
+  
+}
+
+main {
+   min-height: 72vh;
+    flex: 1;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.intro-text {
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+.login-box {
+   height: 55vh;
+}
+
+.nav-link{
+    color: black;
+}
+.nav-link:hover, .dropdown-item:hover{
+    color: rgba(255, 0, 132, 0.911);
+}
+
+pre {
+    color: #d63384;;
+}
+
+.code-comments {
+    color: rgba(74, 72, 72, 0.925);
+    padding: 0;
+    margin: 0;
+}
