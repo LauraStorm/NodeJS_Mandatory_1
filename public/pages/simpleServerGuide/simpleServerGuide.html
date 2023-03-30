@@ -1,0 +1,199 @@
+<h1>Setup A Simple Server with express </h1>
+<div class="intro-text">
+    <ul>
+        <li>Notice that this guide will use commonJS to import</li>
+    </ul>
+</div>
+
+<hr>
+<h2>Steps</h2>
+
+
+<!-- 1. create a project -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Step 1: Create project</code></h3>
+        <ul>
+            <li>Create a project in Visual Studio e.g.</li>
+            <li>Create a new file: <code>package.json</code></li>
+        </ul>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6> package.json </h6>
+        <hr>
+        <div class="card-body "></div>  
+    </div>
+</div>
+
+<!-- 2. create dependencies -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Step 2:  Write dependencies</code></h3>
+        <ul>
+            <li>In <code>package.json</code> write Express dependency:</li>
+           
+        </ul>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>Dependencies in package.json </h6>
+        <hr>
+        <div class="card-body "><pre><code class="language-javascript">{
+    "dependencies":{
+        "express": "4.18.2"
+    }  
+}           </code></pre>
+        </div>    
+    </div>
+</div>
+
+
+<!-- 3. install dependencies -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Step 3: Install dependencies</code></h3>
+        <ul>
+            <li> Install dependencies: Write <code>$ npm install</code> in the terminal</li>
+        </ul>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>Install dependencies</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ npm install</code></p>
+        </div>
+    </div>
+</div>
+
+<!-- 4. create app.js -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Step 4: Create app.js</code></h3>
+        <ul>
+            <li>Create a new js file: <code>app.js</code><br>
+            - it's in this file we will setup the server</li>
+        </ul>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>app.js</h6>
+        <hr>
+        <div class="card-body "></div>
+    </div>
+</div>
+
+<!-- 5. setup the server -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Step 5: Setup the server in app.js</code></h3>
+        <ul>
+            <li>Declare a variable that 'gets' express module/libary: <code>const express = require('express');</code></li>
+            <li>Declare a variable 'app' with the express variable: <code>const app = express();</code></li>
+        </ul>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>Get express</h6>
+        <hr>
+        <div class="card-body mb-3">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const express = require ('express');</code></p>
+        </div>
+        <h6>Declare 'app' variable </h6>
+        <hr>
+        <div class="card-body">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const app = express();</code></p>
+        </div>
+    </div>
+</div>
+
+<!-- 6. setup port -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Step 6: Setup the Port in app.js</code></h3>
+        <ul>
+            <li>Write the port number on the app variable <br>
+            - This app starts a server and listens on port 8080 for connections</li>
+        </ul>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>Get express</h6>
+        <hr>
+        <div class="card-body mb-3"><pre><code class="language-javascript">const PORT = 8080;
+app.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+        return;
+    }
+    console.log("Server is running on port", PORT);
+});
+        </code></pre>
+
+        </div>
+       
+    </div>
+</div>
+
+<!-- 7. run app -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Step 7: Execute app.js file in terminal</code></h3>
+        <ul>
+            <li>Be in the folder where app.js is</li>
+            <li>Execute app.js in terminal <br>
+                <b>node:</b> because it is with node we would like to execute the file <br>
+                <b>app.js:</b> is the file we would like to execute
+            </li>
+        </ul>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>Execute app.js in terminal</h6>
+        <hr>
+        <div class="card-body mb-3">
+            <code class="language-javascript">$ node app.js</code>
+        </div>
+    </div>
+</div>
+
+<!-- 8. localhost in browser -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Step 8: Check if server is connected</code></h3>
+        <ul>
+            <li>Go to a browser (Google Chrome e.g.)</li>
+            <li>Write <code>localhost:8080</code></li>
+            <li>The browser should give you this message: <b>cannot GET /</b> <br>
+                if it's connected</li>
+        </ul>
+    </div>
+
+    <div class="col card m-3 p-3 " >
+        <h6>In a browser</h6>
+        <hr>
+        <div class="card-body mb-3">
+            <code class="language-javascript">localhost:8080</code> <br>
+        </div>
+        <h6>You are connected if you get this message in browser</h6>
+        <hr>
+        <div class="card-body mb-3">
+            <code class="language-javascript">cannot GET /</code>
+        </div>
+    </div>
+</div>
+
+<!-- DONE - YOU DID IT -->
+<hr>
+<h2><code>... That was it! </code></h2>
+<h5>Se how you implement <a href="/crud-rest-api">CRUD</a></h5>
+
