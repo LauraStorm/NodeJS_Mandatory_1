@@ -1,0 +1,146 @@
+<h1>Variables</h1>
+
+<div class="intro-text">
+    <p>
+        We use variables to store data. <br>
+        When we write variables in JS we have different keywords
+    </p>
+    <!-- All keywords overview -->
+    <div class="row">
+        <div class="col-4 card m-3 " style="width: 18rem;">
+            <div class="card-body text-center">
+            <h5 class="card-title"></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><code>const</code></h6>
+            </div>
+        </div>
+        <div class="col-4 card m-3 " style="width: 18rem;">
+            <div class="card-body text-center">
+            <h5 class="card-title"></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><code>let</code></h6>
+            </div>
+        </div>
+        <div class="col-4 card m-3 " style="width: 18rem;">
+            <div class="card-body text-center">
+            <h5 class="card-title"></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><code>var</code></h6>
+            </div>
+        </div>
+        <div class="col-4 card m-3 " style="width: 18rem;">
+            <div class="card-body text-center">
+            <h5 class="card-title"></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><code>.. nothing</code></h6>
+            </div>
+        </div>
+    </div>
+    <p>BUT you should only use the keywords <b>const</b> and <b>let</b></p>
+</div>
+<hr>
+<!-- CONST -->
+<div>
+    <h3>Const</h3>
+    <ul>
+        <li>ALWAYS use <code>const</code> - until it won't <code>let</code> you </li>
+    </ul>
+    <br>
+    <h5>2 rules when using <code>const</code></h5>
+    <div class="row">
+        <!-- box 1 -->
+        <div class="col m-3 p-3 ">
+            <h6>1. You need to assign a value when you declare a variable</h6>
+            <p>Examples: </p>
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // Correct way </code></p> 
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const name = "Laura";</code></p> 
+                  <br>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // Wrong way - will get an error </code></p> 
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const name;</code></p> 
+                </div>
+            </div>  
+        </div>
+        <!-- box 2 -->
+        <div class="col m-3 p-3 ">
+            <h6>2. You cannot reassign </h6>
+            <p>Examples: </p>
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                    <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const name = "Laura";</code></p> <br> 
+                    <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">// Wrong - it will give you an error when you try to reassign a new value to 'name'</code></p> 
+                    <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">name = "Karen";</code></p> 
+                </div>
+            </div>  
+        </div>
+    </div>
+    
+        
+    <div class="col card m-3" >
+        <div class="card-body ">
+            <p><b>Note: </b> <br>
+                It is possible to change/modify an object who is stored in a <code>const</code> variable
+            </p> 
+            
+            <p class="card-subtitle mb-2 text-muted">
+                <code class="language-javascript">
+                    const person = { <br>
+                        &nbsp firstName: "Laura", <br>
+                        &nbsp lastName: "Storm" <br>
+                    };  
+                </code> 
+            </p> 
+            <br>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> person.name = "Karen";</code></p> 
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">// output: { firstName: 'Karen', lastName: 'Storm' };</code></p> 
+        </div>
+    </div>  
+</div> <br>
+
+<!-- LET -->
+<hr>
+<div>
+    <h3>Let</h3>
+    <ul>
+        <li>Never use let - unless you have to</li>
+        <li>You use let when you have to reassign</li>
+        
+    </ul>
+
+    <div class="col card m-3" >
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">// You can reassign like that</code></p> 
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">let sum = 33;</code></p> 
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">sum = 76;</code></p> 
+        </div>
+    </div>  
+    <p> <b>Why is it bad?</b> <br>
+        Because you can modify/change a variable without noticing.
+    </p>
+</div> <br>
+
+<!-- VAR and 'Total global variable' -->
+<hr>
+<div>
+    <h3>Never do global variables</h3>
+    <ul>
+        <li>Global variables is not good when you code, because they can be access from everywhere.</li>
+        <li>You can forget you wrote it and easily override/reassign them</li>
+        <li><code>var</code> is a global variable</li>
+    </ul>
+    <p></p>
+
+    <div class="col m-3 p-3 ">
+        <p>So never do this: </p>
+        <div class="col card mt-3" >
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // Wrong to do - global variable </code></p> 
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">var globalVariable = "Never do this";</code></p> 
+                <br>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // Wrong to do -  total global variable </code></p> 
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">totalGlobalVariable = "Also never do this";</code></p> 
+                
+            </div>
+        </div>  
+    </div>
+</div>
+
+
+
