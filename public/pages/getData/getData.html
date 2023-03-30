@@ -1,0 +1,93 @@
+<h1>Query String & Path Variable</h1>
+<div class="intro-text">
+    <p>Query String and Path Variable are used to get data/information from the URL of an HTTP request</p>  
+</div>
+
+<!-- Query String-->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Query String </code></h3>
+        <ul>
+            <li>A Query String starts with a '<code>?</code>' and contains a key-value pair</li>
+            <li>If there are more than 1 key-value pair it will be seperated with a '<code>&</code>'</li>
+            <li>It is used to send data to the server for processing</li>
+           
+        </ul><br>
+    </div> 
+    <div class="col card m-3 p-3 " >
+        <h6>Example</h6>
+        <hr>
+        <div class="card-body ">
+            <code class="code-comments"> // URL</code> <br>
+            <code class="language-javascript"> http://google.com/example?code=awesome&level=beginner</code> <br><br>
+
+            <code class="code-comments"> // app.js </code> <br>
+            <p><code class="language-javascript"><pre>app.get("/example", (req, res) => {
+    console.log(req.query.code) <code class="code-comments">// output: awesome</code>
+    console.log(req.query.level) <code class="code-comments">// output: beginner</code>
+    res.send({ message : `The value to the keys are ${req.query.code} and ${req.query.level} ` });
+})</pre></code></p> <br>
+
+
+            <hr>
+            <p class="code-comments"> <b>Notes:</b><br>
+                <b>http =</b> protocol <br>
+                <b>google =</b> domain <br>
+                <b>example =</b> endpoint <br>
+                <b>?code=awesome&level=beginner =</b> query string <br>
+                <b>code =</b> key, <b>awesome =</b> value <br>
+                <b>level =</b> key, <b>beginner =</b> value <br>
+                  </p>
+        </div>
+    </div>
+</div>
+
+<!-- Path Variable -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>Path Variable </code></h3>
+        <ul>
+            <li>Path Variable are mostly used to extract dynamic segments from the URL path</li>
+            <li>Example: this URL path <code>'/birds/1'</code> could be used to identify a specific bird with the ID 1. <br>
+                So <b>1</b> in the URL is the path variable. - and we extract that information to search in a database for example.
+            </li>
+            <li>Path Variable allows us to create dynamic and flexible applications</li>
+            
+           
+        </ul><br>
+    </div> 
+    <div class="col card m-3 p-3 " >
+        <h6>Example</h6>
+        <hr>
+        <div class="card-body ">
+            <code class="code-comments"> // URL</code> <br>
+            <code class="language-javascript"> http://google.com/birds/1</code> <br><br>
+
+            <code class="code-comments"> // app.js </code> <br>
+            <p><code class="language-javascript"><pre>app.get("/birds/:id", (req, res) => {
+    console.log(req.params.id) <code class="code-comments">// output: 1</code>
+    const foundBird = birds.find(bird => bird.id === Number(req.params.id));
+    res.send({ data: foundBird });
+})</pre></code></p> <br>
+
+
+            <hr>
+            <p class="code-comments"> <b>Notes:</b><br>
+                  <b>http =</b> protocol <br>
+                  <b>google =</b> domain <br>
+                  <b>/birds =</b> endpoint <br>
+                  <b>1 =</b> path variable <br><br>
+
+                  <b>'/birds/:id'</b> = id is a placeholder for 1 in the URL. ':placeholder' is the syntax - and you can write whatever you want for the placeholder variable name. <br>
+                  <b>req.params.id</b> = is the way you extrac the path variable. 
+                  <b>req</b> = request
+                  <b>params</b> = path variable
+                  <b>id</b> = is where the path variable value is stored
+                  <br>
+            
+            </p>
+        </div>
+    </div>
+</div>
