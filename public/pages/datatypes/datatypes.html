@@ -1,0 +1,407 @@
+<h1> Data Types  </h1>
+
+<div class="intro-text">
+    <p>When working with data, it is important to know what kind of data you are working with.
+        <br><br> 
+        Are you sure what data type you are working with? 
+        <br>
+        Use the <code class="language-javascript"> typeof()</code> operator to find out. It will return a String of what type! 
+    </p>
+</div>
+
+<!-- All Types overview -->
+<hr>
+<div class="row">
+    <h3>Overview of Types</h3>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Strings</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><code>""</code></h6>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Boolean </h5>
+          <h6 class="card-subtitle mb-2 text-muted"><code>true/false</code></h6>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Undefined </h5>
+          <h6 class="card-subtitle mb-2 text-muted"><code>undefined</code></h6>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Objects</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><code>{}</code></h6>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Arrays </h5>
+          <h6 class="card-subtitle mb-2 text-muted"><code>[]</code></h6>
+        </div>
+    </div>
+</div>
+
+
+<!-- STRINGS -->
+<hr>
+<div>
+    <h3><code>Strings</code> </h3>
+    <ul>
+        <li>Strings = 'text' in normal language</li>
+        <li> You know you are working with Strings if you se qoutation marks "" </li>
+    </ul>
+
+    <h5>3 ways to write Strings:</h5>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+            <code class="code-comments">// single quotes</code>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const teamOne = 'Team 1'; </code></p>
+        </div>
+    </div>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+            <code class="code-comments">// double quotes</code>
+             <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const teamOne = "Team 2";</code></p>
+        </div>
+    </div>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+            <code class="code-comments">// string template literal</code>
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const teamThree = `Team ${1+2}`; </code></p>
+          
+        </div>
+    </div>
+    
+
+    <h6>String litereal</h6>
+    <ul>
+        <li>String template literal is a smart way to do String interpolation</li>
+        <li>As shown above the syntax is:  <code class="language-javascript">` ${} ` </code></li>
+        <li> Inside <code class="language-javascript">${}</code> you can write variable names etc.</li>
+    </ul>
+   
+     
+    <h5>Nice 2 know</h5>
+    <div class="row">
+        <div class="col border border-secondary m-3 p-3 rounded">
+            <h6>1.</h6>
+            <p>Working with Strings you might use some methods like:</p>
+            <ul>
+                <li><code class="language-javascript">.length()</code></li> 
+                <li><code class="language-javascript">.charAt()</code></li> 
+                <li><code class="language-javascript">.indexOf()</code></li> 
+                <li><code class="language-javascript">.slice()</code></li> 
+                <li><code class="language-javascript">.substring()</code></li> 
+            </ul>
+            <p>Find more methods <a href="https://www.w3schools.com/js/js_string_methods.asp">here</a></p>    
+        </div>
+        
+        <div class="col border border-secondary m-3 p-3 rounded">
+            <h6>2.</h6>
+            <p>You can parse a String to a number</p>
+            <p>Example:</p>
+            <code class="language-javascript">Number("24,6");</code>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Numbers -->
+<hr>
+<div>
+    <h3><code>Numbers</code></h3>
+    <ul>
+        <li>Numbers can be stores with and without decimals. </li>
+        - because javascript do not care about integers and floats. It is just numbers.
+    </ul>
+   
+    <h5>Example - without decimals:</h5>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const length = 23; </code></p>
+        </div>
+    </div>
+    <h5>Example - with decimals:</h5>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const teamTwo = 55.3; </code></p>
+        </div>
+    </div>
+    
+    
+    <h5>Nice 2 know</h5>
+    <div>
+        <p>Working with Numbers you might use some methods like:</p>
+        <ul>
+            <li><code class="language-javascript">.toString()</code></li> 
+            <li><code class="language-javascript">.toFixedt()</code></li> 
+        </ul>
+        <p>Find more methods <a href="https://www.w3schools.com/js/js_number_methods.asp">here</a></p>    
+    </div>
+</div>
+
+<!-- Boolean -->
+<hr>
+<div>
+    <h3><code>Boolean</code></h3>
+    <ul>
+        <li>With booleans you work with 2 values: <b>true</b> and <b>false</b></li>
+    </ul>
+    
+    <h5>Example - boolean variables:</h5>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const isSingle = true; </code></p>
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const isTired = false; </code></p>
+        </div>
+    </div>
+    
+    <p>Often we use booleans for comparisons and conditions.</p>
+
+</div>
+
+<!-- Undefinexd  -->
+<hr>
+<div>
+    <h3><code>Undefined</code></h3>
+    <ul><li>Undefined indicates that a variable has not been assigned</li></ul>
+    <h5>Example</h5>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+            <code class="code-comments"> // the declared variable x has no value assigned, and will be undefined.</code>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">let x;<br> </code> </p>
+            <code class="code-comments">// output: undefined</code>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(typeof (x));<br> </code> </p>
+           
+        </div>
+    </div>
+</div>
+
+<!-- Objects  -->
+<hr>
+<div>
+    <h3><code>Object</code></h3>
+    <ul>
+        <li>Objects can contain many values</li>
+        <li>Values are written in  <b>key-value </b> pairs. - (a property).</li>
+        <li> <b>Key</b> = is always a String (think of it like a variable name/the property)</li>
+        <li><b>Value</b>  = is the value to store (like the value to a variable)</li>
+    </ul>
+ 
+    <h5>Example</h5>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+          <p class="card-subtitle mb-2 text-muted">
+            <code class="language-javascript">
+                const person = { <br>
+                    &nbsp firstName: "Laura", <br>
+                    &nbsp lastName: "Storm" <br>
+                };  <br> 
+            </code></p>
+            <code class="code-comments"> 
+                // key = firstName <br>
+                // value = lastName
+            </code>
+            
+        </div>
+    </div>
+   
+</pre> 
+    </code> 
+
+    <h5>Nice 2 know</h5>
+    <p>The following examples will refer to the person object above</p>
+    <div class="row">
+        <!-- box 1 -->
+        <div class="col border border-secondary m-3 p-3 rounded">
+            <h6>1. Access a property</h6>
+            <p>Here are 2 examples: </p>
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const firstName = person.firstName; <br></code> 
+                    <code class="code-comments">
+                        // person = the object, <br> 
+                        // firstname = key
+                    </code> </p>
+                  
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(firstName);</code>  <br> 
+                    <code class="code-comments">
+                        // output: Laura
+                    </code></p>
+                </div>
+            </div>
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const firstName = person['firstName']; <br></code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(firstName); <br> </code>
+                    <code class="code-comments">
+                        // output: Laura
+                    </code></p>
+                </div>
+            </div>    
+        </div>
+        <!-- box 2 -->
+        <div class="col border border-secondary m-3 p-3 rounded">
+            <h6>2. Add a property</h6>
+            <p>Example:</p>
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">person.age = 26;</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// we have now added age to the person object</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(person)</code> </p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// output: { firstName: 'Laura', lastName: 'Storm', age: 26 }</code> </p>
+                </div>
+            </div>  
+        </div>
+        <!-- box 3 -->
+        <div class="col border border-secondary m-3 p-3 rounded">
+            <h6>3. Remove a property</h6>
+            <p>To remove a property- use the delete keyword</p>
+            <p>Example:</p>
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">delete person.age;</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(person);</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// output: { firstName: 'Laura', lastName: 'Storm'} </code></p>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+
+<!-- Arrays  -->  
+<hr>
+<div>
+    <h3><code>Array</code></h3>
+    <ul>
+        <li>Array are of type objects</li>
+        <li>You can tell you are working with arrays by <code class="language-javascript">'[]'</code></li>
+        <li>Arrays are simular to objects --> they both collections of values <br>
+            Objects use 'string-keys', Arrays use numeric indices to access and store values
+        </li>
+    </ul>
+    <h5>Example:</h5>
+    <div class="col card mt-3" >
+        <div class="card-body ">
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const friends = [];</code></p>
+          <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// The example is an empty array of friends</code></p>
+        </div>
+    </div> <br>
+
+
+    <h5>Nice 2 know</h5>
+    <p>Working with arrays you might use methods like:</p>
+    <div class="row">
+        <!-- Box 1 -->
+        <div class="col border border-secondary m-3 p-3 rounded">
+            <h6>1. Add element to array </h6>
+            <p><b> Example with: </b><code class="language-javascript">.push()</code> <br>
+            Using <code class="language-javascript">.push()</code> you add the element to the end of the array</p>
+
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const friendOne = 'Søren';</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">friends.push(friendOne);</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">friends.push('Karen');</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// console.log(friends);</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// output: [ 'Søren', 'Karen' ];</code></p>
+                </div>
+            </div>  <br>
+
+            <p><b>Example with: </b> <code class="language-javascript"> .splice()</code> <br>
+                With splice you can add multiple elements at the same time and place them in the array from a specific index
+            </p>
+
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const friends = ["Søren", "Karen"];</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">friends.splice(1,0, "Peter", "Yvonne");</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(friends);</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// console.log(friends)</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// output: [ 'Søren', 'Peter', 'Yvonne', 'Karen' ];</code></p>
+                </div>
+            </div>  
+
+            <hr>
+            <p>
+                <b>1</b>  = index start - the new elements will be placed from index 1 <br>
+                <b>0</b> = tells that no elements after should 'disappear' (if it said 1 instead Karen would be removed from the array)<br>
+                <b>Peter and Yvonne</b>  = new elements to the friends array
+            </p>
+        </div>
+
+         <!-- Box 2 -->
+        <div class="col border border-secondary m-3 p-3 rounded">
+            <h6>2. Access elements</h6>
+            <p><b>Example with:</b> index position <br>
+            Note: Here we know the index position
+            </p>
+
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const friends = ["Søren", "Peter", "Yvonne", "Karen"];</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const firstFriendInArray = friends[0];</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(firstFriendInArray);</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// output: Søren</code></p>
+                </div>
+            </div>  <br>
+           
+            <p><b>Example with:</b> for-loop<br>
+                Note: for-loop is an 'old' way of accessing elements. <br>
+            ---> use <a href="/loop-methods">loop methods</a> instead. 
+            </p>
+
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const friends = ["Søren", "Peter", "Yvonne", "Karen"];</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">
+                    for (const friend of friends) { <br>
+                        &nbsp console.log(friend) <br>
+                    };<br></code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// output: Søren Peter Yvonne Karen</code></p>
+                </div>
+            </div>        
+        </div>
+
+         <!-- Box 3 -->
+        <div class="col border border-secondary m-3 p-3 rounded">
+            <h6>3. Remove an element</h6>
+            <p><b>Example with:</b> <code class="language-javascript">.pop()</code> <br>
+                Using <code>.pop()</code> you will always remove the las element in your array
+            </p>
+
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const friends = ["Søren", "Peter", "Yvonne", "Karen"];</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">friends.pop();</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// removes Karen from the array</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// output: Søren Peter Yvonne</code></p>
+                </div>
+            </div> <br>     
+
+            <p><b>Example with:</b> <code class="language-javascript">.findIndex() + .splice()</code> <br>
+            When you would like to remove a element from a specific index position 
+            </p>
+
+            <div class="col card mt-3" >
+                <div class="card-body ">
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const friends = ["Søren", "Peter", "Yvonne", "Karen"];</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const foundIndex = friends.findIndex(friend => friend === 'Peter');</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const deleteFriend = friends.splice(foundIndex, 1);</code></p>
+                  <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// Peter is removed from the array </code></p>
+                </div>
+            </div>  
+            <hr>
+            <p>
+                <b>.findIndex</b>  = loops through every friend in the array to find 'Peter's index position <br>
+                <b>.splice</b>  = removes Peter from the array. 1 = tells how many elements need to be removed
+            </p>
+        </div>
+    </div>
+</div>
+
