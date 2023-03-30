@@ -1,0 +1,392 @@
+<h1>Import / Export</h1>
+<div class="intro-text">
+    <div class="row">
+        <h3>Ways to imports</h3>
+        <div class="col-4 card m-3 " style="width: 18rem;">
+            <div class="card-body text-center">
+            <h5 class="card-title"><code>require()</code></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Part of commonJS module system (default in Node)</h6>
+            </div>
+        </div>
+        <div class="col-4 card m-3 " style="width: 18rem;">
+            <div class="card-body text-center">
+            <h5 class="card-title"><code>import keyword</code> </h5>
+            <h6 class="card-subtitle mb-2 text-muted">ECMAScript modules <br> Write - "type":"module" - in package.json</h6>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Overview of this page-->
+<div class="row">
+    <h3>Overwiev of this page</h3>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+        <h5 class="card-title">CommonJS</h5>
+        <h6 class="card-subtitle mb-2 text-muted">require()/export</h6>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+        <h5 class="card-title">ECMAScript</h5>
+        <h6 class="card-subtitle mb-2 text-muted">import/export</h6>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+        <h5 class="card-title">Import JS files in HTML</h5>
+        <h6 class="card-subtitle mb-2 text-muted"></h6>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+        <h5 class="card-title">Import CSS in HTML</h5>
+        <h6 class="card-subtitle mb-2 text-muted"></h6>
+        </div>
+    </div>
+    
+</div>
+
+
+<!----------------------------------------------------------------------------->
+<!-- CommonJS Require () -->
+<hr>
+<div class="row">
+    <h2>CommonJS</h2><br><br>
+    <div class="col">
+        <h3 ><code>require()</code></h3>
+        <ul>
+            <li><code>require()</code> is a function that is used to import modules in Node.js </li>
+            <li>It is a part of the CommonJS module system, which is the default module system used in Node.js</li>
+            <li>When we use <code>require()</code> we are specifying a path to a module that you want to import </li>
+            <li><code>require()</code> =  synchronous <br> which means that it blocks the execution of the code until the module has been loaded</li>
+        </ul>
+       
+
+
+    </div>
+    <div class="col card m-3 p-3 " >
+        <h6>app.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// import with require()</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const express = require("express");</code></p>
+        </div>
+    </div>
+</div> <br>
+<!-- commonJS export-->
+<div class="row">
+    <div class="col">
+        <h3 ><code>export</code></h3>
+        <ul>
+            <li>tanks.j - exporting </li>
+            <li>app.js - importing </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col card m-3 p-3 " >
+        <h6>tanks.js </h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>function getTanks () {
+return tanks;
+}
+
+function addTank (tank){
+tanks.push(tank)
+return tanks;
+}
+
+module.exports = {
+getTanks,
+addTank
+}</pre></code></p> <br>
+
+        </div>
+        
+    </div> 
+    <div class="col card m-3 p-3 ">
+        <h6>app.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript" >const {getTanks, addTank} = require("./util/tanks.js");</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">  or </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">const tanks = require("./util/tanks.js");</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> // access: tanks.getTanks() </code></p>
+            <br><hr>
+            <p class="code-comments"><b>Note</b></p>
+            <p class="code-comments">The module will be importet as a object.  
+                <br> Key-value - has the same name in this case (the function names)
+                <br>EX. 
+                <br> Key = getTanks 
+                <br> Value = getTanks</p>
+        </div>
+        <br>
+        
+    </div> 
+</div>
+<!----------------------------------------------------------------------------->
+<!-- ECMAScript import -->
+<hr>
+<div class="row">
+    <h2>ECMAScript (ES6)</h2><br><br>
+    <div class="col">
+        <h3 ><code>import</code></h3>
+        <ul>
+            <li><code>import</code> is a keyword that is used to import modules in ECMAScript (ES) modules </li>
+            <li>It is a newer module system that was introduced in ES6.</li>
+            <li>With <code>import</code> we are allowed to specify (destructering) what we would like to import from a module <br>
+            (example: import 2 functions out of 4 in module)</li>
+            
+        </ul>
+    </div>
+    <div class="col card m-3 p-3 " >
+        <h6>app.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">// import with the keyword import  </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">import express from "express"; </code></p>
+            import a function ???
+        </div>
+    </div>
+</div>
+<!-- access 'package.json' ECMAScript-->
+<div class="row">
+    <div class="col">
+        <h5>How to 'access' <code>import</code> with ECMAScript</h5>
+        <ul>
+            <li>To use import, we have to write a key-value line in our package.json file. <br>
+            Write: <code>"type" : "module"</code></li>
+        </ul>
+       
+    </div>
+    <div class="col card m-3 p-3 " >
+        <h6>package.json</h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>{
+    "name": "upper",
+    "version": "0.0.1",
+    "description": "Motivation app with jokes",
+    "type": "module",
+    "main": "app.js",
+    ... 
+}</pre> </code>
+                </p>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ECS6 export-->
+<div class="row">
+    <div class="col">
+        <h3 ><code>export</code></h3>
+
+    </div>
+</div>
+<!--    ECS6 export example 1 -->
+<div class="row">
+    <div class="col">
+        <h5>Example 1</h5>
+        <ul>
+            <li>tanks.js = export</li>
+            <li>app.js = import</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col card m-3 p-3 " >
+        <h6> tanks.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>function getTanks () {
+    return tanks;
+}
+            
+function addTank (tank){
+    tanks.push(tank)
+    return tanks;
+}
+            
+export default = {
+    getTanks,
+    addTank
+}</pre></code></p>
+    
+        </div>    
+    </div> 
+
+    <div class="col card m-3 p-3 ">
+        <h6>app.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript" >import tanks from "./util/tanks.js";</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments" >// access:  tanks.getTanks(); </code></p>
+            <p class="code-comments"> or</p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript" >import {getTanks, addTank} from "./util/tanks.js";</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments" >// access: getTanks();  </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments" >// import with destructuring </code></p>           
+        </div>
+    </div> 
+</div>
+
+<!--    ECS6 export example 2 -->
+<div class="row">
+    <div class="col">
+        <h5>Example 2</h5>
+        <p>You can also use export declaration. <br>
+            Export declaration is when you write export in front of a declaration</p>
+        <ul>
+            <li>barracks.js = export</li>
+            <li>guards.js = import</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col card m-3 p-3 " >
+        <h6>barracks.js </h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript" ><pre>export function addGuard(guard) {
+    guards.push(guard);
+    return guards;
+}</pre></code></p>
+        </div>
+    </div> 
+    <div class="col card m-3 p-3 ">
+        <h6> guards.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript" >import { addGuard } from "./barracks.js";</code></p>
+        </div> 
+    </div> 
+</div>
+
+<!----------------------------------------------------------------------------->
+<!-- IMPORT JS file in HTML -->
+<hr>
+<h2>Import JS file in HTML</h2>
+<br>
+<div class="row">
+    <div class="col">
+        
+        <h4><code>How to import a script to html</code></h4>
+        <p class="code-comments">1. Create a script - example frontpage.js</p><br>
+        <p class="code-comments">2. Write a log in that script - so we can check the connection later</p><br>
+        <p class="code-comments">3. Create your HTML page - example frontpage.html <br><br>
+            <b>Note: </b>write <code>'!'  </code>+  <code>'enter' </code>  - then you get the 'html start syntax'
+        </p><br>
+    </div>
+    <div class="col card m-3 p-3 " >
+        <h6>frontpage.js</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log("Test - frontpage");</code></p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p class="code-comments">4. Write a script-tag in frontpage.html <br><code>&lt;script src=&quot;/pages/frontpage/frontpage.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;</code></p>
+        <p class="code-comments"><code class="code-comments">// src = the path to where your frontpage.js script is placed</code></p>
+        <p class="code-comments"><code class="code-comments">// type="module"  = tells the browser to 'treat' the script as a module <br>
+        - we do it when we use ES6 module - import/export
+        </code></p>
+        <p class="code-comments"><code class="code-comments"><b>Note:</b> it is possible to do it without the attribute ' type="module" ' but it will handle it as traditional JavaScript and not access the module functionality. <br>
+        Another thing is to place the script at the bottom of the body-tag. Because the HTML file will be  read from top to bottom</code></p><br>
+        <p class="code-comments">5. Run your app.js with: <code class="language-javascript">$ nodemon app.js</code></p><br>
+        <p class="code-comments">6. Go to your browser on your frontpage and "undersøg" and choose "console"</p><br>
+        <p class="code-comments">7. Your message should be shown </p>
+    </div>
+    <div class="col card m-3 p-3 " >
+        <h6>frontpage.html</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;frontpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    <code class="code-comments">&lt;!-- frontpage.js importet --&gt;</code>
+    &lt;script src=&quot;/pages/frontpage/frontpage.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+            </pre></code></p>
+        </div>
+    </div>
+</div>
+
+
+<!----------------------------------------------------------------------------->
+<!-- IMPORT CSS file in HTML -->
+<hr>
+<h2>Import CSS file in HTML</h2>
+<br>
+<div class="row">
+    <div class="col">
+        
+        <h4><code>How to import a CSS file to html</code></h4>
+        <p class="code-comments">1. Create a CSS file -  example main.css</p><br>
+        <p class="code-comments">2. In your CSS there should be a styling - so you can check that it is connected. <br>
+        Example: change the bacground color</p><br>
+        <p class="code-comments">3. Go to an HTML page where you would like the styling - example frontpage.html </p><br>
+    </div>
+    <div class="col card m-3 p-3 " >
+        <h6>main.css</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>body {
+    background-color: orange;
+}
+
+            </pre></code></p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p class="code-comments">4. Write a link-tag in the head-tag in frontpage.html <br><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/main.css&quot;&gt;</code></p>
+        <p class="code-comments"><code class="code-comments">// rel = specifies/describe the type we link</code></p>
+        <p class="code-comments"><code class="code-comments">// href = the path to your CSS file </code></p> <br>
+        <p class="code-comments">5. Run your app.js with: <code class="language-javascript">$ nodemon app.js</code></p><br>
+        <p class="code-comments">6. Go to your browser on your frontpage</p><br>
+        <p class="code-comments">7. Your background should be orange (in this case)</p><br>
+
+    </div>
+    <div class="col card m-3 p-3 " >
+        <h6>frontpage.html</h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    <code class="code-comments">&lt;!-- main.css importet --&gt;</code>
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/main.css&quot;&gt;
+    &lt;title&gt;frontpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    <code class="code-comments">&lt;!-- frontpage.js importet --&gt;</code>
+    &lt;script src=&quot;/pages/frontpage/frontpage.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+            </pre></code></p>
+        </div>
+    </div>
+</div>
