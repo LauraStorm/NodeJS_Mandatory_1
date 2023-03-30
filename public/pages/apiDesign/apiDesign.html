@@ -1,0 +1,80 @@
+<h1>REST API - Design</h1>
+<div class="intro-text">
+    Before coding a REST API it is good practice to make a Design. <br>
+    The Design should show the collections of endpoints in your application and what they will do.
+</div>
+
+<hr>
+<div class="row">
+    <div class="col">
+       <h3>When Designing focus on: </h3>
+        <ol>
+            <li>Ordering of the HTTP methods</li>
+            <li>The standardization of the endpoints which should reflect the underlying collections in your system</li>
+        </ol>
+ 
+    </div>
+    <!-- WORDS -->
+    <div class="col-3 border-left ">
+        <h6 class="text-center"><b>Words</b></h6>
+        <hr>
+        <p><b>collections</b> = endpoint. <br>In mySQL it is tables</p>
+    </div>
+    
+</div> <br>
+
+<div class="row">   
+    <h4>Design Example</h4> 
+    <div class="col">
+        <table class="table border border-secondary">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">HTTP Method</th>
+                <th scope="col">Endpoint</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>GET</td>
+                <td>/movies</td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>/movies/< id > </td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/movies</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>/movies/< id ></td>
+            </tr>
+            <tr>
+                <td>PATCH</td>
+                <td>/movies/< id ></td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>/movies/< id ></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>    
+</div>
+<div>
+    <div class="row card mt-3 rounded" >
+        <div class="col">
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <b>Methods:</b> tells the HTTP request (GET, POST, PUT, PATHC, DELETE) <br>
+                <b>Endpoints:</b> shows endpoint <br> Note: always write in flertal    <br>
+                <b>method + endpoint</b> = will be the description for us (to know what is going on)
+            </li>
+            </ul>
+        </div>
+     </div>
+</div>
+
+    
+</div>
