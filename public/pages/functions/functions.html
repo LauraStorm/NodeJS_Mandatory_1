@@ -1,0 +1,92 @@
+<h1>Functions</h1>
+<div class="intro-text"></div>
+
+<!-- Function declaration -->
+<hr>
+<div>
+    <h3>Function Declaration</h3>
+    <div class="card m-3 p-3 " >
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(sum(8,2)); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output: 10 </code></p> <br>
+            
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                function sum (num1, num2) { <br>
+                &nbsp return num1 + num2; <br>
+            };</code></p>
+            <hr>
+            <p><b>Notes:</b><br> 
+                When you use function declaration you can call/use the function anywhere in your script. <br>
+                It is possible to use the function before it is declared. - it's because function declaration are hoisting ('to lift up')</p>
+        </div>
+    </div> 
+</div>
+
+<!-- Callback functions -->
+<hr>
+<div>
+    <h3>Callback Functions </h3>
+    <div class="card m-3 p-3 " >
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                function greet (aName, aFunction) { <br>
+                &nbsp return aFunction(aName); <br>
+            };</code></p> <br>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                function sayHello (aName) { <br>
+                &nbsp return `Hello ${aName} - have a lovely day!`; <br>
+            };</code></p>  <br>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(greet("Laura", sayHello)); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // 'sayHello' is a callback function because we 'call' the function and execute it in 'greet' function  </code></p> 
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output: Hello Laura - have a lovely day! </code></p> <br>
+
+
+            <hr>
+            <p><b>Notes:</b><br> 
+                A callback function is a function passed into another function as an argument. <br>
+                The 'outher function' will use the passed function and 'call' it
+            </p>
+        </div>
+    </div> 
+</div>
+
+<!-- Anonymous functions -->
+<hr>
+<div>
+    <h3>Anonymous Functions </h3>
+    <div class="card m-3 p-3 " >
+        <div class="card-body ">
+            <h6>Example</h6>
+            <hr>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                const fullname = function (firstname, lastname) { <br>
+                &nbsp return `${firstname} ${lastname}`; <br>
+            };</code></p>  <br>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(fullname("Laura", "Storm")); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output: Laura Storm </code></p> 
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // as you see there is no function name after the function keyword </code></p> 
+            <br> <br>
+
+            <h6>Example - arrow function</h6>
+            <hr>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                const fullname = (firstname, lastname) => { <br>
+                &nbsp return `${firstname} ${lastname}`; <br>
+            };</code></p>  <br>
+            <p>or</p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> 
+                const fullname = (firstname, lastname) => `${firstname} ${lastname}`;</code></p>  <br>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript">console.log(fullname("Laura", "Storm")); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // output: Laura Storm </code></p> 
+            <br> 
+
+            <hr>
+            <p><b>Notes:</b><br> 
+                As the name says, it's a function without a name --> the function is anonymous. <br>
+                There are different syntax when you write anonymous functions. <br> <br>
+                Arrow functions <code>' => '</code> gives us the opportunity to write shorter functions and more compact. <br>
+                If the you dont have parameters then you just write empty <code>'()'</code>
+            </p>
+        </div>
+    </div> 
+</div>
