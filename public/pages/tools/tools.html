@@ -1,0 +1,165 @@
+<h1>Tools</h1>
+<div class="intro-text"></div>
+
+
+<!-- All Types overview -->
+
+<div class="row">
+    <h3>Overview of tools</h3>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Nodemon</h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Postman</h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Vercel</h5>
+        </div>
+    </div>
+   
+</div>
+
+<!-- Nodemon -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 >Nodemon</h3>
+        <ul>
+           <li>Nodemon is a tool that is good in production for developers</li>
+           <li>Nodemon will run the script automatically everytime you make a change in your code</li>
+           <li>Use nodemon instead of running <code>$ node app.js</code> everytime you make a change in your code</li>
+           <li>See how to install nodemon <a href="/">here</a> if you dont have it</li>
+        </ul>
+
+        <br><h4>Expand nodemon</h4>
+        <ul>
+            <li>You can create a <code>nodemon.json</code> file where you can expand it functionality so it automaticaly update when you make changes in example html-, JS files</li>
+            <li>When the file is created, you can just run the <code>$nodemon app.js</code> and it will work</li>
+
+        </ul>
+    </div>
+    <div class="col-6">
+        <div class="card m-3 p-3 " >
+            <h6>How to use nodemon: </h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> Instead of writing: </code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ node app.js</code></p>
+                <br>
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> Write: </code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ nodemon app.js</code></p>
+            </div>
+        </div>
+        <div class="card m-3 p-3 " >
+            <h6>How to expand nodemon: </h6>
+            <hr>
+            <div class="card-body ">
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> 1. Create nodemon.json file </code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> 2. In nodemon.json file write </code></p>
+                <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>{
+    "ext": "js,json,html"
+}</pre></code></p>
+
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<!-- Postman -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 >Postman</h3>
+        <ul>
+           <li>We use postman for testing our api's</li>
+           <li>Example to test CRUD functionality</li>
+           <li>Go to <a href="/crud-rest-api">simple CRUD</a> page to see the code</li>
+        </ul>
+
+    </div>
+    <div class="col card m-3 p-3 " >
+        <h6>Example in postman: GET all birds </h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> 1. Choose GET</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> 2. Write the GET endpoint to get all birds</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> localhost:8080/birds</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> 3. Remember to run your application</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> $ nodemon app.js</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> 4. Click 'Send' in postman</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments"> 5. You should see all birds</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>{
+    "data": [
+        {
+            "id": 1,
+            "name": "Violet-backed starling",
+            "maleRating": 10,
+            "femaleRating": 2
+        },
+        {
+            "id": 2,
+            "name": "Penguin"
+        }
+    ]
+}</pre></code></p>
+        </div>
+    </div>
+</div>
+
+<!-- Vercel -->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 >Vercel</h3>
+        <ul>
+           <li>Vercel is a platform we can use to deploy our application</li>
+           <li>You can connect your github repo</li>
+           <li>Remember to create a vercel.json file with configurations before connecting your repo. - find the configuration <a href="https://shadowsmith.com/guides/how-to-deploy-an-express-api-to-vercel">here</a> or look at 'How to deploy'</li>
+           <li>Log in on Vercels site <a href="https://vercel.com/">here</a></li> 
+           <br><b>OBS:</b> all your javascript files and css files nedd to be moved in to you html page before it works...
+        </ul>
+    </div>
+    <div class="col card m-3 p-3 " >
+        <h6>How to deploy: </h6>
+        <hr>
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">1. Create 'vercel.json' file in your project </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">2. In vercel.json write following configuration. <br> 
+                // 'app.js' is where the application run. So if it has another name in your project, remember to change it! </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"><pre>{
+    "version": 2,
+    "builds": [
+        {
+        "src": "app.js",
+        "use": "@now/node"
+        }
+    ],
+    "routes": [
+        {
+        "src": "/(.*)",
+        "dest": "app.js"
+        }
+    ]
+}</pre></code>
+            </p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">3. Remember to push your project to Github</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">4. Go to Vercels site and login</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">5. Select 'Add New..' and choose 'Project'</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">6. Select the Github repo you would like to deploy</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">7. Fill out ' Project Name'</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">8. 'Root Directory' click 'Edit' and choose the project</code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="code-comments">9. Click 'Deploy</code></p>
+        </div>
+    </div>
+</div>
+
+
+
+
