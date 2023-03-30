@@ -12,7 +12,6 @@
             <li>A Query String starts with a '<code>?</code>' and contains a key-value pair</li>
             <li>If there are more than 1 key-value pair it will be seperated with a '<code>&</code>'</li>
             <li>It is used to send data to the server for processing</li>
-           
         </ul><br>
     </div> 
     <div class="col card m-3 p-3 " >
@@ -27,9 +26,7 @@
     console.log(req.query.code) <code class="code-comments">// output: awesome</code>
     console.log(req.query.level) <code class="code-comments">// output: beginner</code>
     res.send({ message : `The value to the keys are ${req.query.code} and ${req.query.level} ` });
-})</pre></code></p> <br>
-
-
+})</pre></code></p><br>
             <hr>
             <p class="code-comments"> <b>Notes:</b><br>
                 <b>http =</b> protocol <br>
@@ -38,7 +35,7 @@
                 <b>?code=awesome&level=beginner =</b> query string <br>
                 <b>code =</b> key, <b>awesome =</b> value <br>
                 <b>level =</b> key, <b>beginner =</b> value <br>
-                  </p>
+            </p>
         </div>
     </div>
 </div>
@@ -54,8 +51,6 @@
                 So <b>1</b> in the URL is the path variable. - and we extract that information to search in a database for example.
             </li>
             <li>Path Variable allows us to create dynamic and flexible applications</li>
-            
-           
         </ul><br>
     </div> 
     <div class="col card m-3 p-3 " >
@@ -71,22 +66,19 @@
     const foundBird = birds.find(bird => bird.id === Number(req.params.id));
     res.send({ data: foundBird });
 })</pre></code></p> <br>
-
-
             <hr>
             <p class="code-comments"> <b>Notes:</b><br>
-                  <b>http =</b> protocol <br>
-                  <b>google =</b> domain <br>
-                  <b>/birds =</b> endpoint <br>
-                  <b>1 =</b> path variable <br><br>
+                <b>http =</b> protocol <br>
+                <b>google =</b> domain <br>
+                <b>/birds =</b> endpoint <br>
+                <b>1 =</b> path variable <br><br>
 
-                  <b>'/birds/:id'</b> = id is a placeholder for 1 in the URL. ':placeholder' is the syntax - and you can write whatever you want for the placeholder variable name. <br>
-                  <b>req.params.id</b> = is the way you extrac the path variable. 
-                  <b>req</b> = request
-                  <b>params</b> = path variable
-                  <b>id</b> = is where the path variable value is stored
-                  <br>
-            
+                <b>'/birds/:id'</b> = id is a placeholder for 1 in the URL. ':placeholder' is the syntax - and you can write whatever you want for the placeholder variable name. <br>
+                <b>req.params.id</b> = is the way you extrac the path variable. 
+                <b>req</b> = request
+                <b>params</b> = path variable
+                <b>id</b> = is where the path variable value is stored
+                <br>
             </p>
         </div>
     </div>
