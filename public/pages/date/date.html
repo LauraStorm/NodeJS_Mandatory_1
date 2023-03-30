@@ -1,0 +1,108 @@
+<h1>Date</h1>
+<div class="intro-text">
+    <p>Date is an object in JS. <br>
+        There are different methods you can use when you want/need to work with dates and time. 
+    </p>
+</div>
+
+<hr>
+<div class="row">
+    <h3>Methods you can use:</h3>    
+    <p>See examples further down - how to use</p> 
+    
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"></h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>.getDate()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"> </h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>.getDay()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"></h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>.getHours()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"></h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>.getFullYear()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title"></h5>
+          <h5 class="card-subtitle mb-2 text-muted"><code>new Date()</code></h5>
+        </div>
+    </div>
+    <div class="col-4 card m-3 " style="width: 18rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title text-muted">see more methods </h5>
+          <h5 class="card-subtitle mb-2 text-muted"><a href="https://www.w3schools.com/js/js_date_methods.asp">here</a></h5>
+        </div>
+    </div>
+</div>
+
+
+
+<hr>
+<div>
+    <h5>Example using different date methods:</h5> <br>
+
+    <h6>1. Get todays date <code>.getDate();</code> </h6>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const todaysDate = new Date().getDate(); </code></p>
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // will return the date (a number) ex. 14 </code></p>
+        </div>
+    </div>
+
+    <h6>2. Get day <code>.getDay();</code> </h6>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const today= new Date().getDay(); </code></p>
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // will return a number of the day in the week (0-6) </code></p>
+          <hr>
+            <b> Note: </b> <br>
+            Sunday = 0, Monday = 1 ... Saturday = 6
+        </div>
+    </div>
+
+    <h6>3. Get hour <code>.getHours();</code></h6>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const today= new Date().getHours(); </code></p>
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // will return a number of hours (0-23) </code></p>
+        </div>
+    </div>
+    
+    <h6>4. Get year <code>.getFullYear();</code></h6>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const today= new Date().getFullYears(); </code></p>
+          <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> // will return the year (ex. 2023) </code></p>
+        </div>
+    </div>
+
+    <h6>5. create a date <code> new Date();</code></h6>
+    <div class="col card m-3 " >
+        <div class="card-body ">
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const myBirthday = new Date("february 6, 1997"); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> const myBithdayDate = myBirthday.getDate(); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> console.log(myBithdayDate); </code></p>
+            <p class="card-subtitle mb-2 text-muted"><code class="language-javascript"> //output: 6 </code></p>
+                
+            <hr>
+            <p>
+                <b> Note: </b> <br>
+                There are other ways you can create/write the date in the <code>()</code> <br>
+                When you <code>console.log(myBirthday) </code> the output is <code>1997-02-05T23:00:00.000Z</code>.. Notice the date is 'wrong'- but it is not (confusing)
+            </p>
+        </div>
+    </div> 
+</div>
