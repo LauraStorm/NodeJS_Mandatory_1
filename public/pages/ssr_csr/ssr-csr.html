@@ -1,0 +1,220 @@
+<h1>SSR & CSR</h1>
+<div class="intro-text">
+    <p>Before starting a project, it is good to figure out how you should render your application. SSR or CSR.</p>
+
+    <p><b>Thoughs you might have:</b> </p>
+    <ul>
+        <li>Is it important to get a good SEO result? </li>
+        <li>The performance,  is it okay that it is slow?</li>
+        <li>The user experience is that an important factor?</li>
+    </ul>
+</div>
+
+
+<!-- SSR-->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>SSR</code></h3>
+        <ul>
+            <li>SSR = Server-Side Rendering</li>
+            <li>The Server is rendering the HTML pages - generate the HTML pages</li>
+            <li>With SSR the server send a fully loaded rendered HTML page to the client</li>
+            <li>SSR is good to use when the content is almost static</li>
+        </ul><br>
+
+        <h5><code>SSR</code></h5>
+        <p class="code-comments"><b>Time =</b> faster</p>
+        <p class="code-comments"><b>SEO =</b> Better</p>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>PROS - 'fordele' </h6>
+        <hr>
+        <div class="card-body ">
+            <ul>
+                <li><code class="language-javascript"> Improves the loading speed</code></li>
+                <li><code class="language-javascript"> Improves the SEO</code></li> <br>
+                <code class="language-javascript"> ... because all the content is rendered before it gets send to the client</code> <br><br>
+                <li><code class="language-javascript"> Good for mostly static content</code></li>
+            </ul> 
+            <hr>
+            <p class="code-comments"> <b>Notes:</b><br>
+                <b>SEO</b> = Search Engine Optimization. - is good because the page is rendered when the client gets the page and the 'SEO' can scan the page and use it
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- CSR-->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>CSR</code></h3>
+        <ul>
+            <li>CSR = Client-Side Rendering</li>
+            <li>CSR means rendereing pages directly in the browser with JavaScript</li>
+            <li>CSR is good to use when you have dynamic content</li>
+            <li>The server will send a response with the requested data to the client, and the client/browser will make the page visible with JavaScript code "stored" on the client side</li>
+        </ul> <br>
+        <h5><code>CSR</code></h5>
+        <p class="code-comments"><b>Time =</b> slower</p>
+        <p class="code-comments"><b>SEO =</b> not the best</p>
+
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>PROS - 'fordele' </h6>
+        <hr>
+        <div class="card-body ">
+            <ul>
+                <li><code class="language-javascript"> If you have dynamic content</code></li>
+                <li><code class="language-javascript"> Improves user experience</code></li> <br>
+            </ul>
+            <hr>
+            <p class="code-comments"> <b>Notes:</b><br> a cons can be that you are sending a "mess" to the client --> like saying "you figure it out" <br>It can slow the speed  </p>
+        </div>
+    </div>
+</div>
+
+<!-- REDIRECT CSR-->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>CSR - How to redirect</code></h3>
+
+        <ul>
+            <li>redirect with a-tag in HTML</li>
+            <li>redirect with JavaScript</li>
+        </ul> 
+        <br>
+        <h5><code>Example 1: redirect with a-tag HTML</code></h5>
+        <p class="code-comments">You can redirect in your HTML page with a <code>&lt;a href=&quot;&quot;&gt;&lt;/a&gt;</code> tag.</p>
+        <p class="code-comments">In the a-tag there is an attribute '<code>href</code>' where you can write the 'URL' to the page you would like to 'redirect' to.</p>
+        <br>
+        <p class="code-comments">To check that it works, remember to have a  <code>app.js</code> file where we have routes that map to the different pages.</p>
+       
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>Example: a-tag HTML </h6>
+        <hr>
+        <div class="card-body ">
+           
+            <p><code class="code-comments">// in HTML - frontpage.html</code></p>
+            <code class="language-javascript">&lt;a href=&quot;/visitors&quot;&gt;Go To Visitors Page&lt;/a&gt;</code>
+            <br><br>
+            <p><code class="code-comments">// in app.js - we have a visitor route with the endpoint '/visitors'</code></p>
+            <p><code class="language-javascript"><pre>app.get("/visitors", (req, res) => {
+    res.sendFile(path.resolve("public/visitors/visitors.html"));
+}); </pre></code></p><br>
+
+            <hr>
+            <p class="code-comments"> <b>Notes:</b><br>
+            The HTML frontpage will have a link with the text: "Go To Visitors Page" where it's possible to click on it and be directed to the visitors page</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col mt-5">
+        <h5><code>Example 2: redirect with javascript</code></h5>
+        <p class="code-comments">In JavaScript we can use following:</p>
+        <p class="card mt-2 p-2" style="width: 70%;"><code class="language-javascript">window.location.href = "/visitors";</code></p>
+        <p class="card mt-2 p-2" style="width: 70%;"><code class="language-javascript">window.location.replace("/visitors")</code></p>
+        <p class="code-comments">// <b>window.location</b> = represent the current URL of the webpage</p>
+        <p class="code-comments">// <b>.href</b> = tels what endpoint the browser should navigate to <br> (and will go to 'visitors' page)</p>
+        <p class="code-comments">// <b>.replace</b> = will also navigate you to the 'visitors' page. It will replace the current page and update the browser history (not be saved). <br>
+            Meaning the user won't be able to use the back button to navigate 
+        </p> <br>
+
+        <p class="code-comments"> The example to the right will navigate you from one page (frontpage.html) to another (visitors.html) 👉🏼 </p>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>Example with JavaScript + setTimeout()</h6>
+        <hr>
+        <div class="card-body ">
+            <code class="code-comments">1. First HTML file - ex. frontpage.html</code><br>
+            <code class="code-comments">2. Second HTML file you can redirect to - ex. visitors.html</code><br>
+            <code class="code-comments">3. A JavaScript file for the function to your frontpage.html - ex. frontpage.js</code><br>
+            <code class="code-comments">4. Import your frontpage.js to the frontpage.html </code><br>
+            
+            <br><br>
+            <p><code class="code-comments">// frontpage.js</code></p>
+            <p><code class="language-javascript"><pre>setTimeout(() => {
+    window.location.href = "/visitors";
+}, 3000);</pre></code></p><br>
+
+            <p><code class="code-comments">// frontpage.html - import frontpage.js</code></p>
+            <p><code class="language-javascript">&lt;script src=&quot;/pages/frontpage/frontpage.js&quot; &gt;&lt;/script&gt;</code></p>
+            <p><code class="code-comments">// run your app.js - and it should redirect you in 3 seconds from te frontpage to visitors page</code></p>
+            <p><code class="language-javascript"> $ nodemon app.js</code></p><br>
+            <hr>
+            <p class="code-comments"> <b>Notes:</b><br>
+                You have a app.js that routes you. <br>
+                - a get map to '/frontpage' <br>
+                - a get map to '/visitors'
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- REDIRECT SSR-->
+<hr>
+<div class="row">
+    <div class="col">
+        <h3 ><code>SSR - How to redirect</code></h3>
+
+        <br>
+        <h5><code>Example: res.redirect()</code></h5>
+        <p class="code-comments">With Server-Side redirection we can use/write <code>res.redirect()</code></p>
+        <p class="code-comments">We do it in app.js when we make routes</p>
+        <br>
+
+        <p class="code-comments"> The example to the right will also check if we get the right data from the query string 👉🏼 <br> </p>
+    </div>
+    
+    <div class="col card m-3 p-3 " >
+        <h6>Example: res.redirect() + check if we get the right query string data</h6>
+        <hr>
+        <div class="card-body ">
+           
+            <p><code class="code-comments">// in app.js</code></p>
+            <p><code class="language-javascript"><pre>import express from "express"
+const app = express();
+
+app.get("/api/tanks", (req, res) => {
+    res.send({ data: "tanks api"});
+});
+
+app.get("/api/guards", (req, res) => {
+    if (req.query.passport === "theskyisblue") {
+        return res.redirect("/api/tanks");        
+    }
+    res.send({ message: "You are not allowed to see the tanks. Give us the secret in the query string with the key being passpor. "});    
+});
+
+const PORT = 8080;
+app.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+        return;
+    }
+    console.log("Server is running on port", PORT);
+});</pre></code></p><br>
+
+            <p><code class="code-comments">// run your app.js</code></p>
+            <p><code class="language-javascript">$ nodemon app.js</code></p> <br>
+            <p><code class="code-comments">// go to your browser and write:</code></p>
+            <p><code class="language-javascript">"/api/guards?passport=theskyisblue"</code></p>
+            <br>
+            <p><code class="code-comments">// You will see the message "tanks api" - and your are redirected!</code></p>
+            <br>
+            <hr>
+            <p class="code-comments"> <b>Notes:</b><br>
+                If we go to "/api/guards?passport=theskyisblue" we will be redirected to "/api/tanks". <br>
+                If we only write "/api/guards" we will get a message saying we are not allowed and therefor only be redirected when we write the right query string
+            </p>
+        </div>
+    </div>
+</div>
